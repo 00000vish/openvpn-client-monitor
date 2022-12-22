@@ -2,11 +2,12 @@
 
 OpenVPN Client Monitor will check the network connection periodically and can shutodnw/restart the OpenVPN client service if the connection is down, it can also check if the ip is leaking and restart it or shutdown the computer.
 
+
 ## ⚠️ Warnings
 - #### _For Linux running `openvpn@client.service` only!_
 - #### _Does not garantee this will prevent ip leaking!_
 ## Features
-
+- Defualt: Checks every 5 mins and restarts openvpn@client.service if connection is down.
 - Very customizable via command line args.
 - Configurable checking interval.
 - Configurable restart/shutdown/more to come.
@@ -46,22 +47,32 @@ sudo python3 main.py
 
 ## Command Line Args
 
-For production release:
-
+To print command line args options
 ```sh
-gulp build --prod
+./main -h
 ```
 
-Generating pre-built zip archives for distribution:
+To check the network connection every 100 seconds
 
 ```sh
-gulp build dist --prod
+./main -t 100 
 ```
 
+To check the network connection every 100 seconds and shutdown computer
+
+```sh
+./main -t 100 -a 2
+```
+
+To check the network connection every 100 seconds and restart 
+
+```sh
+./main -t 100 -a 1
+```
 
 ## Development
 
-Want to contribute? Great, pull requests are welcomed!
+Want to contribute? Great!, pull requests are welcomed! Thank you!
 
 ### TODO
 [ ] implement logging/log file
