@@ -75,9 +75,9 @@ To check the network connection every 100 seconds and restart
 Want to contribute? Great!, pull requests are welcomed! Thank you!
 
 ### TODO
-[ ] implement logging/log file
-[ ] implement more actions
-[ ] load settings from a config yaml file
+- [ ] implement logging/log file
+- [ ] implement more actions
+- [ ] load settings from a config yaml file
 
 ## License
 
