@@ -1,12 +1,11 @@
 [Unit]
 Description=OpenVPN Client Monitor service
 After=network.target
-StartLimitIntervalSec=0[Service]
 Type=simple
 Restart=always
+StartLimitIntervalSec=0
 RestartSec=1
-User=centos
-ExecStart=/usr/bin/env php /path/to/server.php
+ExecStart=/usr/bin/openvpn-client-mon
 
 [Install]
 WantedBy=multi-user.target
