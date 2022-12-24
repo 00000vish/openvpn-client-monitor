@@ -1,6 +1,8 @@
 [Unit]
 Description=OpenVPN Client Monitor service
 After=network.target
+
+[Service]
 Type=simple
 Restart=always
 StartLimitIntervalSec=0
