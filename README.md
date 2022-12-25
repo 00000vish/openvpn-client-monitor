@@ -4,7 +4,8 @@ OpenVPN Client Monitor will check the network connection periodically and can sh
 
 
 ## ⚠️ Warnings
-- #### _For Linux running `openvpn@client.service` only!_
+- #### _For Linux running `openvpn@client.service` only! (currently)_
+   - _but can be easily changed your requirements._
 - #### _Does not garantee this will prevent ip leaking!_
 ## Features
 - Defualt: Checks every 5 mins and restarts openvpn@client.service if connection is down.
@@ -13,7 +14,16 @@ OpenVPN Client Monitor will check the network connection periodically and can sh
 - Configurable restart/shutdown/more to come.
 
 
-## Installation
+# Installation
+
+# Using `installer.sh`
+Run installer.sh as sudo to install and setup auto start
+```sh
+sudo chmod 777 ./installer.sh
+sudo ./installer.sh
+```
+
+# Manual Installtion
 
 Install requirements to run/build the OpenVPN Client Monitor with
 ```sh
@@ -50,6 +60,7 @@ sudo python3 main.py
 To print command line args options
 ```sh
 ./main -h
+
 ```
 
 To check the network connection every 100 seconds
