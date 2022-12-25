@@ -16,14 +16,14 @@ OpenVPN Client Monitor will check the network connection periodically and can sh
 
 # Installation
 
-# Using `installer.sh`
+## Using `installer.sh`
 Run installer.sh as sudo to install and setup auto start
 ```sh
 sudo chmod 777 ./installer.sh
 sudo ./installer.sh
 ```
 
-# Manual Installtion
+## Manual Installation
 
 Install requirements to run/build the OpenVPN Client Monitor with
 ```sh
@@ -31,17 +31,33 @@ python3 -m pip install -r requirements.txt
 ```
 
 
-## Building Executable
+### Building Binary
 Make sure you installed requrement.txt first and then run
 
 ```sh
 pyinstaller -F main.py
 ```
-The single file executable will be in `./dist/main`.
+The single file binary will be in `./dist/main`.
 
 You can run it by _(sudo required)_
 ```sh
 sudo ./dist/main
+```
+
+### Setup Autostart
+Copy the binary over `./user/bin/` 
+```sh
+sudo cp ./dist/main /usr/bin/openvpn-client-mon
+```
+
+Copy systemd file over to `./etc/systemd/system/`
+```sh
+cp ./etc/systemd/system/openvpnclientmon.service /etc/systemd/system/openvpnclientmon.service
+```
+Enable and Start OpenVPN Client Monitor 
+```sh
+sudo systemctl enable openvpnclientmon.service
+sudo systemctl start openvpnclientmon.service
 ```
 
 ### Running it as a script _(not recommended)_
@@ -55,7 +71,7 @@ You can run it by _(sudo required)_
 sudo python3 main.py
 ```
 
-## Command Line Args
+# Command Line Args
 
 To print command line args options
 ```sh
