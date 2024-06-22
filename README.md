@@ -19,7 +19,7 @@ OpenVPN Client Monitor will check the network connection periodically and can sh
 ## Using `installer.sh`
 Run installer.sh as sudo to install and setup auto start
 ```sh
-sudo chmod 777 ./installer.sh
+sudo chmod +x ./installer.sh
 sudo ./installer.sh
 ```
 
