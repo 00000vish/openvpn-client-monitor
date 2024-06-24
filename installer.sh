@@ -9,19 +9,22 @@ fi
 printf  "\nOpenVPN-Client-Monitor installer"
 
 printf  "\n\nPython3-pip (Required)\n"
-read -p 'Install python3-pip? (yes/skip): ' pythonpip
+read -p 'Install python3? (yes/skip): ' installpython
 
-if [ $pythonpip = "yes" ]
+if [ $installpython = "yes" ]
   then 
     printf "\n"
-    sudo apt install python3-pip
+    sudo apt install python3 python3-pip python3-venv -y
   else  
     echo "skipping..."
 fi
 
 
-python -m venv ./venv
+printf  "\n\n"
+printf  "\nCreating Python3 venv"
+python3 -m venv ./venv
 source ./venv/bin/activate
+printf  "\nDone Creating Python3 venv"
 
 printf  "\n\n"
 read -p 'Install required python modules from requirements.txt?  (yes/skip): ' pyinstaller
