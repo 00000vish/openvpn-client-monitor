@@ -8,7 +8,6 @@ fi
 
 printf  "\nOpenVPN-Client-Monitor installer"
 
-#TODO: should use venv? 
 printf  "\n\nPython3-pip (Required)\n"
 read -p 'Install python3-pip? (yes/skip): ' pythonpip
 
@@ -20,6 +19,9 @@ if [ $pythonpip = "yes" ]
     echo "skipping..."
 fi
 
+
+python -m venv ./venv
+source ./venv/bin/activate
 
 printf  "\n\n"
 read -p 'Install required python modules from requirements.txt?  (yes/skip): ' pyinstaller
